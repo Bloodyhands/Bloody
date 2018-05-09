@@ -1,0 +1,40 @@
+header nav
+{
+	margin-top: 30px;
+	font-size: 1em;
+	font-style: italic;
+	text-transform: uppercase;
+}
+nav a
+{
+	color: black;
+}
+#page_title
+{
+	font-size: 1.8em;
+	margin: 10px 0 10px 0;
+	border: 1px black solid;
+
+}
+#chapters_list
+{
+	border: 1px black solid;
+	margin: 0 5px 5px 5px;
+}
+#chapter_button
+{
+	justify-content: center;
+	display: flex;
+	margin-bottom: 5px;
+}
+footer p
+{
+	border-top: 1px black solid;
+	margin-top: 30px;
+	margin-bottom: -2px;
+}
+
+#pagination
+{
+	margin-top: 30px;
+}
