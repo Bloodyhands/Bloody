@@ -15,4 +15,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('views\backend\template.php'); ?>
+<?php require('views\frontend\template.php'); ?>

@@ -20,7 +20,7 @@
           </div>
           <div class="col-6">
             <nav class="nav justify-content-center">
-              <a class="nav-link" href="index.php?page=addPost">Gestion des Chapitres</a>
+              <a class="nav-link" href="/addPostView.php">Gestion des Chapitres</a>
               <a class="nav-link" href="index.php?page=adminComment">Gestion des Commentaires</a>
             </nav>
           </div>

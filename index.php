@@ -1,6 +1,7 @@
 <?php
 
 require('controllers\frontend.php');
+require('controllers\backend.php');
 
 try
 {
@@ -37,6 +38,21 @@ try
       else
       {
         throw new Exception('Aucun identifiant de billet envoyé');  
+      }
+    }
+    elseif ($_GET['action'] == 'adminPost') 
+    {
+      adminPost();
+    }
+    elseif ($_GET['action'] == 'addPost')
+    {
+      if (!empty($_POST['title']) && !empty($_POST['content']))
+      {
+        addPost($_GET['id'], $_GET['title'], $_GET['content']);
+      }
+      else
+      {
+        throw new Exception('Tous les champs ne sont pas remplis');
       }
     }
   }

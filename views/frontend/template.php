@@ -21,8 +21,8 @@
           </div>
           <div class="col-6">
             <nav class="nav justify-content-center">
-              <a class="nav-link" href="index.php?page=index.php">Chapitres</a>
-              <a class="nav-link" href="index.php?page=contact">Contact</a>
+              <a class="nav-link" href="index.php">Chapitres</a>
+              <a class="nav-link" href="index.php?action=adminPost">Contact</a>
               <a class="nav-link" href="index.php?page=connexion">Connexion</a>
               <a class="nav-link" href="index.php?page=subscription">Inscription</a>
             </nav>

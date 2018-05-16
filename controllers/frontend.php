@@ -1,6 +1,6 @@
 <?php
-require_once('models\PostManager.php');
-require_once('models\CommentManager.php');
+require_once ('models\PostManager.php');
+require_once ('models\CommentManager.php');
 
 function allPosts()
 {
@@ -20,11 +20,11 @@ function post()
 	require('views\frontend\postView.php');
 }
 
-function addComment($postId, $pseudo, $comment)
+function addComment($post_id, $pseudo, $comment)
 {
 	$commentManager = new \projet3\Bloody\models\CommentManager();
 
-	$affectedLines = $commentManager->postComment($postId, $pseudo, $comment);
+	$affectedLines = $commentManager->postComment($post_id, $pseudo, $comment);
 
 	if ($affectedLines === false) 
 	{
@@ -32,6 +32,6 @@ function addComment($postId, $pseudo, $comment)
 	}
 	else
 	{
-		header('Location: index.php?action=post&id=' . $postId);
+		header('Location: index.php?action=post&id=' . $post_id);
 	}
 }
