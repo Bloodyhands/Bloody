@@ -21,8 +21,5 @@ function addPost($title, $content)
 
 function adminPost()
 {
-	$postManager = new \projet3\Bloody\models\PostManager();
-	$currentListPosts = $postManager->getPost(100);
-
 	require ('views\backend\addPostView.php');
 }
