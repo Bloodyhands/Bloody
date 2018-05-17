@@ -1,3 +1,4 @@
+/*------CSS header------*/
 header nav
 {
 	margin-top: 30px;
@@ -17,9 +18,9 @@ nav a
 {
 	font-size: 1.8em;
 	margin: 10px 0 10px 0;
-	border: 1px black solid;
-
 }
+
+/*------CSS Post------*/
 #chapters_list
 {
 	border: 1px black solid;
@@ -31,13 +32,30 @@ nav a
 	display: flex;
 	margin-bottom: 5px;
 }
+
+/*------CSS pagination------*/
+#pagination
+{
+	margin-top: 20px;
+}
+
+/*------CSS footer------*/
 footer p
 {
 	border-top: 1px black solid;
 	margin-top: 30px;
 	margin-bottom: -2px;
 }
-#pagination
+
+/*------CSS page contact------*/
+#contact_bio
 {
-	margin-top: 20px;
+	border-bottom: 1px solid black;
+	margin-bottom: 10px;
+}
+#contact_name
+{
+	border-top: 1px solid black;
+	margin-top: 5px;
+	padding-top: 5px;
 }

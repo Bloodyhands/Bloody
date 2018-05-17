@@ -35,3 +35,8 @@ function addComment($post_id, $pseudo, $comment)
 		header('Location: index.php?action=post&id=' . $post_id);
 	}
 }
+
+function contact()
+{
+	require('views\frontend\contact.php');
+}

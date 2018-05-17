@@ -22,7 +22,7 @@
           <div class="col-4">
             <nav class="nav justify-content-center">
               <a class="nav-link" href="index.php">Chapitres</a>
-              <a class="nav-link" href="index.php?page=contact">Contact</a>
+              <a class="nav-link" href="index.php?action=contact">Contact</a>
               <a class="nav-link" href="index.php?page=connexion">Connexion</a>
               <a class="nav-link" href="index.php?page=subscription">Inscription</a>
             </nav>
@@ -41,7 +41,9 @@
      <section>
       <div class="container">
         <div class="row justify-content-center" id="page_title">
-            <?= $title ?>
+            <span class="border border-secondary rounded">
+              <?= $title ?>
+            </span>
         </div>
         <div class="row justify-content-center">
           <?= $content ?>
