@@ -9,7 +9,7 @@ class PostManager extends Manager
 	public function getAllPosts()
 	{
 		$db = $this->dbConnect();
-		$req = $db->query('SELECT id, title, image, content, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM post ORDER BY creation_date DESC LIMIT 0, 8');
+		$req = $db->query('SELECT id, title, image, content, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM post ORDER BY creation_date DESC LIMIT 0, 16');
 
 		return $req;
 	}

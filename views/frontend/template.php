@@ -19,13 +19,16 @@
             <h1 class="text-center">Billet simple pour l'Alaska</h1>
             <h3 class="text-center">Par Jean Forteroche</h3>
           </div>
-          <div class="col-6">
+          <div class="col-4">
             <nav class="nav justify-content-center">
               <a class="nav-link" href="index.php">Chapitres</a>
-              <a class="nav-link" href="index.php?action=adminPost">Contact</a>
+              <a class="nav-link" href="index.php?page=contact">Contact</a>
               <a class="nav-link" href="index.php?page=connexion">Connexion</a>
               <a class="nav-link" href="index.php?page=subscription">Inscription</a>
             </nav>
+          </div>
+          <div class="col-2">
+            <a class="btn btn-primary" href="index.php?action=adminPost" role="button" id="add_post">Ajouter un chapitre</a>
           </div>
         </div>
 
@@ -38,7 +41,7 @@
      <section>
       <div class="container">
         <div class="row justify-content-center" id="page_title">
-          <?= $title ?>
+            <?= $title ?>
         </div>
         <div class="row justify-content-center">
           <?= $content ?>

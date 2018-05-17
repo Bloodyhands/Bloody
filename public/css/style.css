@@ -9,6 +9,10 @@ nav a
 {
 	color: black;
 }
+#add_post
+{
+	margin-top: 30px;
+}
 #page_title
 {
 	font-size: 1.8em;

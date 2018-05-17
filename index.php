@@ -48,7 +48,7 @@ try
     {
       if (!empty($_POST['title']) && !empty($_POST['content']))
       {
-        addPost($_GET['id'], $_GET['title'], $_GET['content']);
+        addPost($_POST['title'], $_POST['content']);
       }
       else
       {
