@@ -32,4 +32,19 @@ class PostManager extends Manager
 
 		return $affectedLines;
 	}
+
+	public function editPost($title, $content, $id)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE post SET title = :title, content = :content, update_date=NOW() WHERE id = :id');
+		$modifiedPost = $req->execute(array('title' => $title, 'content' => $content, 'id' => $id));
+
+		return $modifiedPost;
+	}
+
+	public function clearPost($id)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('DELETE FROM post WHERE id = ?');
+	}
 }

@@ -62,4 +62,5 @@
       </div>
     </footer>
   </body>
+  <script src="\projet3\Bloody\public\src\tinymce\js\tinymce.min.js"></script>
 </html>

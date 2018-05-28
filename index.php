@@ -5,63 +5,68 @@ require('controllers\backend.php');
 
 try
 {
-  if (isset($_GET['action'])) 
-  {
-    if ($_GET['action'] == 'allPosts') 
-    {
+  if (isset($_GET['action'])) {
+    //accès à la page de tous les chapitres//
+    if ($_GET['action'] == 'allPosts') {
       posts();
     }
-    elseif ($_GET['action'] == 'post') 
-    {
-      if (isset($_GET['id']) && $_GET['id'] > 0) 
-      {
+    //accès à un chapitre en particulier//
+    elseif ($_GET['action'] == 'post') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
         post();
       }
-      else
-      {
-        throw new Exception('Aucun identifiant de billet envoyé');
+      else {
+        $_SESSION['error'] = 'Aucun identifiant de chapitre envoyé';
       }
     }
-    elseif ($_GET['action'] == 'addComment') 
-    {
-      if (isset($_GET['id']) && $_GET['id'] > 0) 
-      {
-        if (!empty($_POST['pseudo']) && !empty($_POST['comment'])) 
-        {
+    //formulaire d'ajout de commentaires//
+    elseif ($_GET['action'] == 'addComment') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+        if (!empty($_POST['pseudo']) && !empty($_POST['comment'])) {
           addComment($_GET['id'], $_POST['pseudo'], $_POST['comment']);
         }
-        else
-        {
-          throw new Exception('Tous les champs ne sont pas remplis');
+        else {
+          $_SESSION['error'] = 'Tous les champs ne sont pas remplis';
         }
       }
-      else
-      {
-        throw new Exception('Aucun identifiant de billet envoyé');  
+      else {
+        $_SESSION['error'] = 'Aucun identifiant de chapitre envoyé'; 
       }
     }
-    elseif ($_GET['action'] == 'adminPost') 
-    {
+    //accès à la page d'ajout de chapitre//
+    elseif ($_GET['action'] == 'adminPost') {
       adminPost();
     }
-    elseif ($_GET['action'] == 'addPost')
-    {
-      if (!empty($_POST['title']) && !empty($_POST['content']))
-      {
+    //formulaire d'ajout de chapitre//
+    elseif ($_GET['action'] == 'addPost') {
+      if (!empty($_POST['title']) && !empty($_POST['content'])) {
         addPost($_POST['title'], $_POST['content']);
       }
-      else
-      {
-        throw new Exception('Tous les champs ne sont pas remplis');
+      else {
+        $_SESSION['error'] = 'Tous les champs ne sont pas remplis';
       }
     }
-    elseif ($_GET['action'] == 'contact') 
-    {
+    //accès à la modification de chapitre//
+    elseif ($_GET['action'] == 'updatePost') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+        updatePost($_GET['id']);
+      }
+    }
+    //suppression des chapitres//
+    elseif ($_GET['action'] == 'deletePost') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+        deletePost($_GET['id']);
+      }
+      else {
+        $_SESSION['error'] = 'Le chapitre n\'a pas pu être supprimé';
+      }
+    }
+    //page contact//
+    elseif ($_GET['action'] == 'contact') {
       contact();
     }
   }
-  else
-  {
+  else {
     allPosts();
   }
 }

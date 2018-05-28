@@ -1,17 +1,24 @@
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
-<p><a href="index.php">Retour à la liste des chapitres</a></p>
-
-<div class="row">
-	<p class="text-justify">
+<div class="row justify-content-center" id="subtitle_post">
+	<div class="col-6">
+		<div id="chapter_return" class="text-center"><a class="btn btn-primary btn-sm" href="index.php" role="button">Retour à la liste des chapitres</a></div>
+	</div>
+	<div class="col-3">
+		<div id="chapter_update" class="text-center"><a class="btn btn-primary btn-sm" href="index.php?action=adminPost" role="button">Modifier le chapitre</a></div>
+	</div>
+	<div class="col-3">
+		<div id="chapter_delete" class="text-center"><a class="btn btn-primary btn-sm" href="index.php?action=deletePost" role="button">Supprimer le chapitre</a></div>
+	</div>
+	<div class="col-12">
+	<p class="text-justify" id="content_post">
 		<?= nl2br(htmlspecialchars($post['content'])) ?>
 	</p>
 </div>
-
 <div class="row justify-content-center">
 	<div class="col-12">
-		<h5 class="text-center">Commentaires</h5><br>
+		<h5 class="text-center" id="comment_post_title">Commentaires</h5><br>
 	</div>
 	<div class="col-6">
 		<form action="index.php?action=addComment&id=<?= $post['id'] ?>" method="post">
@@ -23,7 +30,7 @@
 			<label for="comment">Commentaires</label><br>
 			<textarea class="textarea" id="comment" name="comment" rows="3"></textarea>
 		</div>
-		<button type="submit" class="btn btn-primary mb-2">Envoyer</button>
+		<button type="submit" class="btn btn-primary btn-sm">Envoyer</button>
 		</form>
 	</div>
 	<div class="col-6">

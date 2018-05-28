@@ -32,6 +32,17 @@ nav a
 	display: flex;
 	margin-bottom: 5px;
 }
+#chapter_return, #chapter_update, #chapter_delete
+{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#content_post
+{
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding-bottom: 30px;
+}
 
 /*------CSS pagination------*/
 #pagination
