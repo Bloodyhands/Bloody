@@ -6,7 +6,7 @@
 		<div id="chapter_return" class="text-center"><a class="btn btn-primary btn-sm" href="index.php" role="button">Retour à la liste des chapitres</a></div>
 	</div>
 	<div class="col-3">
-		<div id="chapter_update" class="text-center"><a class="btn btn-primary btn-sm" href="index.php?action=adminPost" role="button">Modifier le chapitre</a></div>
+		<div id="chapter_update" class="text-center"><a class="btn btn-primary btn-sm" href="index.php?action=updatePost&id=<?= $post['id']?>" role="button">Modifier le chapitre</a></div>
 	</div>
 	<div class="col-3">
 		<div id="chapter_delete" class="text-center"><a class="btn btn-primary btn-sm" href="index.php?action=deletePost" role="button">Supprimer le chapitre</a></div>

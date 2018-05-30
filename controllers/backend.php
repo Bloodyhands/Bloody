@@ -28,19 +28,15 @@ function adminPost()
 	require ('views\backend\addPostView.php');
 }
 
-function updatePost($id, $title, $content)
+function updatePost($id, $title = null, $content = null)
 {
-	if (!empty($_POST['title']) && !empty($_POST['content'])) {
-		$postManager = new \projet3\Bloody\models\PostManager();
-		$updatedPost = $postManager->editPost($id, $title, $content);
-		
-		if ($updatedPost == true)
-		{
-			$_SESSION['success'] = 'Votre chapitre '. $id .' a bien été modifié';
-		}
+	$postManager = new \projet3\Bloody\models\PostManager();
+
+	if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+		$postManager->editPost($id, $title, $content);
 	}
 
-	header ('Location: index.php?action=adminPost');
+	$post = $postManager->getPost($id);
 	require ('views\backend\editPostView.php');
 }
 

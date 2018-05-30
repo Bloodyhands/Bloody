@@ -9,7 +9,7 @@ class PostManager extends Manager
 	public function getAllPosts()
 	{
 		$db = $this->dbConnect();
-		$req = $db->query('SELECT id, title, image, content, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM post ORDER BY creation_date DESC LIMIT 0, 16');
+		$req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM post ORDER BY creation_date DESC LIMIT 0, 16');
 
 		return $req;
 	}
@@ -17,7 +17,7 @@ class PostManager extends Manager
 	public function getPost($post_id)
 	{
 		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT id, title, image, content, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM post WHERE id = ?');
+		$req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM post WHERE id = ?');
 		$req->execute(array($post_id));
 		$post = $req->fetch();
 
@@ -33,11 +33,11 @@ class PostManager extends Manager
 		return $affectedLines;
 	}
 
-	public function editPost($title, $content, $id)
+	public function editPost($id, $title, $content)
 	{
 		$db = $this->dbConnect();
-		$req = $db->prepare('UPDATE post SET title = :title, content = :content, update_date=NOW() WHERE id = :id');
-		$modifiedPost = $req->execute(array('title' => $title, 'content' => $content, 'id' => $id));
+		$req = $db->prepare('UPDATE post SET title = ?, content = ?, update_date=NOW() WHERE id = ?');
+		$modifiedPost = $req->execute(array($title, $content, $id));
 
 		return $modifiedPost;
 	}

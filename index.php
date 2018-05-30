@@ -48,7 +48,11 @@ try
     }
     //accès à la modification de chapitre//
     elseif ($_GET['action'] == 'updatePost') {
-      if (isset($_GET['id']) && $_GET['id'] > 0) {
+      if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+        if (!empty($_GET['id']) && !empty($_POST['title']) && !empty($_POST['content'])) {
+          updatePost($_GET['id'], $_POST['title'], $_POST['content']);
+        }
+      } else {
         updatePost($_GET['id']);
       }
     }

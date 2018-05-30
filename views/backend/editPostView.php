@@ -5,15 +5,15 @@
   <?= $_SESSION['success']; ?>
 </div>
 
-<form action="index.php?action=updatePost" method="post">
+<form action="index.php?action=updatePost&id=<?=$post['id']?>" method="post">
 	<div class="form-row">
 	<div class="form-group col-12">
 		<label for="Title">Titre</label>
-		<input type="text" class="form-control" id="title" name="title" placeholder="Entrer le titre">
+		<input type="text" class="form-control" id="title" name="title" value="<?=$post['title']?>" placeholder="Entrer le titre">
 	</div>
 	<div class="form-group col-12">
 		<label for="content">Contenu</label><br>
-		<textarea class="form-control" id="textarea" name="content" rows="4" placeholder="Entrer le contenu"></textarea>
+		<textarea class="form-control" id="textarea" name="content" rows="4" placeholder="Entrer le contenu"><?=$post['content']?></textarea>
 	</div>
 </div>
 	<button type="submit" class="btn btn-primary mb-2">Publier</button>
