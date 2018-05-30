@@ -28,7 +28,7 @@
             </nav>
           </div>
           <div class="col-2">
-            <a class="btn btn-primary" href="index.php?action=adminPost" role="button" id="add_post">Ajouter un chapitre</a>
+            <a class="btn btn-primary" href="index.php?action=addPost" role="button" id="add_post">Ajouter un chapitre</a>
           </div>
         </div>
 

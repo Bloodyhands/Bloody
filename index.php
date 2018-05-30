@@ -33,17 +33,14 @@ try
         $_SESSION['error'] = 'Aucun identifiant de chapitre envoyé'; 
       }
     }
-    //accès à la page d'ajout de chapitre//
-    elseif ($_GET['action'] == 'adminPost') {
-      adminPost();
-    }
     //formulaire d'ajout de chapitre//
     elseif ($_GET['action'] == 'addPost') {
-      if (!empty($_POST['title']) && !empty($_POST['content'])) {
-        addPost($_POST['title'], $_POST['content']);
-      }
-      else {
-        $_SESSION['error'] = 'Tous les champs ne sont pas remplis';
+      if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+        if (!empty($_POST['title']) && !empty($_POST['content'])) {
+          addPost($_POST['title'], $_POST['content']);
+        }
+      } else {
+        addPost();
       }
     }
     //accès à la modification de chapitre//

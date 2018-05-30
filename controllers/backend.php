@@ -4,27 +4,20 @@ session_start();
 require_once ('models\PostManager.php');
 require_once ('models\CommentManager.php');
 
-function addPost($title, $content)
+function addPost($title = null, $content = null)
 {
 	$postManager = new \projet3\Bloody\models\PostManager();
-	$affectedLines = $postManager->insertPost($title, $content);
 
-	if ($affectedLines === false) 
-	{
-		$_SESSION['error'] = 'Votre chapitre '. $post_id .' n\'a pas été créé';
-		//throw new Exception('Impossible d\'ajouter le chapitre!');
-	}
-	else
-	{
-		$_SESSION['success'] = 'Votre chapitre '. $post_id .' a bien été créé';	
+	if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+		$postManager->insertPost($title, $content);
 	}
 
-	header ('Location: index.php?action=adminPost');
-	require ('views\backend\addPostView.php');
-}
+	/*if ($postManager === false) {
+		$_SESSION['error'] = 'Votre chapitre '.$id.' n\'a pas été créé';
+	} else {
+		$_SESSION['success'] = 'Votre chapitre '.$id.' a bien été créé';	
+	}*/
 
-function adminPost()
-{
 	require ('views\backend\addPostView.php');
 }
 
