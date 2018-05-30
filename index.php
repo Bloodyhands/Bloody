@@ -14,8 +14,7 @@ try
     elseif ($_GET['action'] == 'post') {
       if (isset($_GET['id']) && $_GET['id'] > 0) {
         post();
-      }
-      else {
+      } else {
         $_SESSION['error'] = 'Aucun identifiant de chapitre envoyé';
       }
     }
@@ -24,12 +23,10 @@ try
       if (isset($_GET['id']) && $_GET['id'] > 0) {
         if (!empty($_POST['pseudo']) && !empty($_POST['comment'])) {
           addComment($_GET['id'], $_POST['pseudo'], $_POST['comment']);
-        }
-        else {
+        } else {
           $_SESSION['error'] = 'Tous les champs ne sont pas remplis';
         }
-      }
-      else {
+      } else {
         $_SESSION['error'] = 'Aucun identifiant de chapitre envoyé'; 
       }
     }
@@ -57,8 +54,7 @@ try
     elseif ($_GET['action'] == 'deletePost') {
       if (isset($_GET['id']) && $_GET['id'] > 0) {
         deletePost($_GET['id']);
-      }
-      else {
+      } else {
         $_SESSION['error'] = 'Le chapitre n\'a pas pu être supprimé';
       }
     }
@@ -66,8 +62,7 @@ try
     elseif ($_GET['action'] == 'contact') {
       contact();
     }
-  }
-  else {
+  } else {
     allPosts();
   }
 }

@@ -50,7 +50,8 @@ class PostManager extends Manager
 	public function clearPost($id)
 	{
 		$db = $this->dbConnect();
-		$req = $db->prepare('DELETE FROM post WHERE id = ?');
-		$req->execute($id);
+		$req = $db->prepare('DELETE FROM post WHERE id = :id');
+		$req->bindParam(':id', $id);
+		$req->execute();
 	}
 }

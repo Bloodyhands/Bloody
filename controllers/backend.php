@@ -35,13 +35,8 @@ function updatePost($id, $title = null, $content = null)
 
 function deletePost($id)
 {
-	if (!empty($_GET['id'])) {
-		$postManager = new \projet3\Bloody\models\PostManager();
-		$deletedPost = $postManager->clearPost($id);
-		
-		if ($deletedPost) {
-			echo 'la suppression a eu lieu';
-			require ('views\frontend\allPostsView.php');
-		}
-	}
+	$postManager = new \projet3\Bloody\models\PostManager();	
+	$postManager->clearPost($id);
+
+	header('Location: index.php');
 }

@@ -9,7 +9,7 @@
 		<div id="chapter_update" class="text-center"><a class="btn btn-primary btn-sm" href="index.php?action=updatePost&id=<?= $post['id']?>" role="button">Modifier le chapitre</a></div>
 	</div>
 	<div class="col-3">
-		<div id="chapter_delete" class="text-center"><a class="btn btn-primary btn-sm" href="index.php?action=deletePost" role="button">Supprimer le chapitre</a></div>
+		<div id="chapter_delete" class="text-center"><a class="btn btn-primary btn-sm" href="index.php?action=deletePost&id=<?= $post['id']?>" role="button">Supprimer le chapitre</a></div>
 	</div>
 	<div class="col-12">
 	<p class="text-justify" id="content_post">
