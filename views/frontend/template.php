@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="\projet3\Bloody\public\css\style.css">
 
+    <!-- TinyMCE -->
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+
     <title>Billet simple pour l'Alaska</title>
   </head>
   <body>
@@ -37,7 +41,7 @@
         </div>
       </div>
     </header>
-
+    <!---------------Section--------------->
      <section>
       <div class="container">
         <div class="row justify-content-center" id="page_title">
@@ -62,5 +66,4 @@
       </div>
     </footer>
   </body>
-  <script src="\projet3\Bloody\public\src\tinymce\js\tinymce.min.js"></script>
 </html>

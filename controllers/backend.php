@@ -10,6 +10,7 @@ function addPost($title = null, $content = null)
 
 	if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
 		$postManager->insertPost($title, $content);
+		header('Location: index.php');
 	}
 
 	/*if ($postManager === false) {
@@ -27,6 +28,7 @@ function updatePost($id, $title = null, $content = null)
 
 	if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
 		$postManager->editPost($id, $title, $content);
+		header('Location: index.php');
 	}
 
 	$post = $postManager->getPost($id);
