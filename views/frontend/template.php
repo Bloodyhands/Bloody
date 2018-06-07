@@ -27,8 +27,8 @@
             <nav class="nav justify-content-center">
               <a class="nav-link" href="index.php">Chapitres</a>
               <a class="nav-link" href="index.php?action=contact">Contact</a>
-              <a class="nav-link" href="index.php?page=connexion">Connexion</a>
-              <a class="nav-link" href="index.php?page=subscription">Inscription</a>
+              <a class="nav-link" href="index.php?action=connexion">Connexion</a>
+              <a class="nav-link" href="index.php?action=registration">Inscription</a>
             </nav>
           </div>
           <div class="col-2">

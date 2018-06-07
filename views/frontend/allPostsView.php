@@ -14,7 +14,7 @@
 	<?php
 	}
 	?>
-	<div class="col-12" id="pagination">
+	<!--<div class="col-12" id="pagination">
 		<nav aria-label="Page navigation example">
 		  <ul class="pagination justify-content-center">
 		    <li class="page-item">
@@ -34,7 +34,7 @@
 		    </li>
 		  </ul>
 		</nav>
-	</div>
+	</div>-->
 </div>
 
 <?php $content = ob_get_clean(); ?>

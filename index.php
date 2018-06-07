@@ -1,7 +1,9 @@
 <?php
 
-require('controllers\frontend.php');
-require('controllers\backend.php');
+require('controllers\commentsController.php');
+require('controllers\postsController.php');
+require('controllers\contactController.php');
+require('controllers\registrationController.php');
 
 try
 {
@@ -56,6 +58,16 @@ try
         deletePost($_GET['id']);
       } else {
         $_SESSION['error'] = 'Le chapitre n\'a pas pu être supprimé';
+      }
+    }
+    //page inscription//
+    elseif ($_GET['action'] == 'registration') {
+      if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+        if (!empty($_POST['pseudo']) && !empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['age']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+          registration($_POST['pseudo'], $_POST['name'], $_POST['firstname'], $_POST['age'], $_POST['email'], $_POST['password']);
+        }
+      } else {
+        registration();
       }
     }
     //page contact//
