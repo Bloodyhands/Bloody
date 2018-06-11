@@ -12,25 +12,21 @@ nav a
 }
 #add_post
 {
-	margin-top: 30px;
+	margin-top: 35px;
 }
 #page_title
 {
-	font-size: 1.8em;
-	margin: 10px 0 10px 0;
+	padding: 20px;
 }
 
 /*------CSS Post------*/
 #chapters_list
 {
-	border: 1px black solid;
-	margin: 0 5px 5px 5px;
+	padding: 10px;
 }
-#chapter_button
+#publication_date
 {
-	justify-content: center;
-	display: flex;
-	margin-bottom: 5px;
+	font-size: 0.9em;
 }
 #chapter_return, #chapter_update, #chapter_delete
 {
@@ -41,13 +37,12 @@ nav a
 {
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
-	padding-bottom: 30px;
+	padding: 20px;
 }
-
-/*------CSS pagination------*/
-#pagination
+#comment_post_title
 {
-	margin-top: 20px;
+	padding: 20px;
+	text-decoration: underline;
 }
 
 /*------CSS footer------*/
@@ -62,11 +57,11 @@ footer p
 #contact_bio
 {
 	border-bottom: 1px solid black;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 #contact_name
 {
 	border-top: 1px solid black;
 	margin-top: 5px;
-	padding-top: 5px;
+	padding-top: 20px;
 }

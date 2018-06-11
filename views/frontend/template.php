@@ -32,7 +32,7 @@
             </nav>
           </div>
           <div class="col-2">
-            <a class="btn btn-primary" href="index.php?action=addPost" role="button" id="add_post">Ajouter un chapitre</a>
+            <a class="btn btn-primary btn-sm" href="index.php?action=addPost" role="button" id="add_post">Ajouter un chapitre</a>
           </div>
         </div>
 
@@ -45,9 +45,11 @@
      <section>
       <div class="container">
         <div class="row justify-content-center" id="page_title">
-            <span class="border border-secondary rounded">
-              <?= $title ?>
-            </span>
+            <div class ="card border-dark text-center">
+              <div class="card-body">
+                <?= $title ?>
+              </div>
+            </div>
         </div>
         <div class="row justify-content-center">
           <?= $content ?>
