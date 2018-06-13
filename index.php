@@ -64,7 +64,11 @@ try
     elseif ($_GET['action'] == 'registration') {
       if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
         if (!empty($_POST['pseudo']) && !empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['age']) && !empty($_POST['email']) && !empty($_POST['password'])) {
-          registration($_POST['pseudo'], $_POST['name'], $_POST['firstname'], $_POST['age'], $_POST['email'], $_POST['password']);
+          if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['email'])) {
+             registration($_POST['pseudo'], $_POST['name'], $_POST['firstname'], $_POST['age'], $_POST['email'] = htmlspecialchars($_POST['email']), $_POST['password']);
+          } else {
+            throw new Exception('l\'adresse mail n\'est pas valide');
+          }
         }
       } else {
         registration();

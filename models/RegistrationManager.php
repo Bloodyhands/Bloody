@@ -22,4 +22,13 @@ class RegistrationManager extends Manager
 
 		return $req;
 	}
+
+	public function check_email($email)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('SELECT COUNT(email) FROM user WHERE email = ?');
+		$req->execute(array($email));
+		
+		return $req;
+	}
 }
