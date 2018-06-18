@@ -9,11 +9,11 @@
 	<div class="form-row">
 		<div class="form-group col-12 text-center">
 			<label for="Title">Titre</label>
-			<input type="text" class="form-control" id="title" name="title" value="<?=$post['title']?>" placeholder="Entrer le titre">
+			<input type="text" class="form-control" id="title" name="title" value="<?=$post['title']?>">
 		</div>
 		<div class="form-group col-12 text-center">
 			<label for="content">Contenu</label><br>
-			<textarea class="form-control" id="textarea" name="content" rows="12" placeholder="Entrer le contenu"><?=$post['content']?></textarea>
+			<textarea class="form-control" id="textarea" name="content" rows="12"><?=$post['content']?></textarea>
 		</div>
 	</div>
 	<div id="editPost" class="text-center">
@@ -23,4 +23,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('views\frontend\template.php'); ?>
+<?php require('views\frontend\templateAdmin.php'); ?>

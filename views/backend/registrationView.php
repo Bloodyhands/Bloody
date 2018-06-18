@@ -39,4 +39,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('views\frontend\template.php'); ?>
+<?php require('views\frontend\templateAdmin.php'); ?>

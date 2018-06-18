@@ -4,6 +4,7 @@ require('controllers\commentsController.php');
 require('controllers\postsController.php');
 require('controllers\contactController.php');
 require('controllers\registrationController.php');
+require('controllers\connectionController.php');
 
 try
 {
@@ -72,6 +73,19 @@ try
         }
       } else {
         registration();
+      }
+    }
+    //page connexion//
+    elseif ($_GET['action'] == 'connection') {
+      if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+        if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
+          connection();
+        } else {
+          throw new Exception('pseudo ou mot de passe manquant');
+        }
+      }
+      else {
+        connection();
       }
     }
     //page contact//
