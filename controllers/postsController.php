@@ -18,7 +18,7 @@ function post()
 	$post = $postManager->getPost($_GET['id']);
 	$comments = $commentManager->getComments($_GET['id']);
 
-	require('views\frontend\postView.php');
+	require('views\frontend\admin\postViewAdmin.php');
 }
 
 function addPost($title = null, $content = null)

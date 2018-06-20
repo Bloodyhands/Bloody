@@ -31,6 +31,9 @@
               <a class="nav-link" href="index.php?action=registration">Inscription</a>
             </nav>
           </div>
+          <!--<div class="col-12">
+            <?php if (isset($_SESSION['id']) AND isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['pseudo']; } ?>
+          </div>-->
         </div>
 
         <div class="row justify-content-center">
