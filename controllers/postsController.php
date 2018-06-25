@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 require_once ('models\PostManager.php');
 
@@ -18,7 +17,7 @@ function post()
 	$post = $postManager->getPost($_GET['id']);
 	$comments = $commentManager->getComments($_GET['id']);
 
-	require('views\frontend\admin\postViewAdmin.php');
+	require('views\frontend\postView.php');
 }
 
 function addPost($title = null, $content = null)

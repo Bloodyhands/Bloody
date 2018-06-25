@@ -1,25 +1,25 @@
 <?php
 require_once ('models\ConnectionManager.php');
 
-function connection($id = NULL, $pseudo = NULL, $password = NULL)
+function connection()
 {
 	$connectionManager = new \projet3\Bloody\models\ConnectionManager();
 
 	if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
-		$connectionManager->connect($id, $pseudo, $password);
+		$user = $connectionManager->connect($_POST['pseudo']);
 		
-		$passwordOk = password_verify($_POST['password'], $result['password']);
-		
-		if (!$result) {
-			echo 'mauvais mot de passe';
+		if (!$user) {
+			throw new Exception('utilisateur inconnu');
 		} else {
-			if ($passwordOk) {
+			if (password_verify($_POST['password'], $user['password'])) {
 				session_start();
-				$_SESSION['id'] = $result['id'];
-				$_SESSION['pseudo'] = $pseudo;
+				$_SESSION['pseudo'] = $user['pseudo'];
+				$_SESSION['name'] = $user['name'];
+				$_SESSION['firstname'] = $user['firstname'];
+				$_SESSION['role'] = $user['role'];
 			}
 			else {
-				echo 'mauvais mot de passe';
+				throw new Exception('mauvais mot de passe');
 			}
 		}
 

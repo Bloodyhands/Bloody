@@ -13,3 +13,16 @@ function addComment($post_id, $pseudo, $comment)
 		header('Location: index.php?action=post&id=' . $post_id);
 	}
 }
+
+function report($comment_id, $user_id)
+{
+	$commentManager = new \projet3\Bloody\models\CommentManager();
+
+	$signals = $commentManager->signals($comment_id, $user_id);
+
+	if ($signals === false) {
+		throw new Exception('Impossible de signaler ce commentaire');
+	} else {
+		header('Location: index.php?action=post&id=' . $post_id);
+	}
+}

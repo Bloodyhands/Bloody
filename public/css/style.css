@@ -10,6 +10,10 @@ nav a
 {
 	color: black;
 }
+#user
+{
+	text-align: center;
+}
 #add_post
 {
 	margin-top: 35px;
@@ -43,6 +47,11 @@ nav a
 {
 	padding: 20px;
 	text-decoration: underline;
+}
+#signals
+{
+	border: 1px solid black;
+	padding: 1px;
 }
 
 /*------CSS footer------*/

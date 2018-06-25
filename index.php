@@ -33,6 +33,10 @@ try
         $_SESSION['error'] = 'Aucun identifiant de chapitre envoyé'; 
       }
     }
+    //signalement de commentaires//
+    elseif ($_GET['action'] == 'report') {
+      
+    }
     //formulaire d'ajout de chapitre//
     elseif ($_GET['action'] == 'addPost') {
       if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {

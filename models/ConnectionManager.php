@@ -6,14 +6,13 @@ require_once('models\Manager.php');
 
 class ConnectionManager extends Manager
 {
-	public function connect ($id, $pseudo, $password)
+	public function connect ($pseudo)
 	{
 		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT id, password FROM user WHERE pseudo = :pseudo');
-		$req->bindParam(':pseudo', $_POST['pseudo']);
+		$req = $db->prepare('SELECT pseudo, password, name, firstname, role FROM user WHERE pseudo = :pseudo');
+		$req->bindParam(':pseudo', $pseudo);
 		$req->execute();
-		$result = $req->fetch();
 
-		
+		return $req->fetch();
 	}
 }
