@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="\projet3\Bloody\public\css\style.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
     <!-- TinyMCE -->
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
@@ -27,7 +30,7 @@
             <nav class="nav justify-content-center">
               <a class="nav-link" href="index.php">Chapitres</a>
               <a class="nav-link" href="index.php?action=contact">Contact</a>
-              <a class="nav-link" href="index.php?action=deconnexion">Déconnexion</a>
+              <a class="nav-link" href="index.php?action=deconnection">Déconnexion</a>
             </nav>
           </div>
           <div class="col-2">
