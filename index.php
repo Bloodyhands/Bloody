@@ -5,6 +5,7 @@ require('controllers\postsController.php');
 require('controllers\contactController.php');
 require('controllers\registrationController.php');
 require('controllers\connectionController.php');
+require('controllers\deconnectionController.php');
 
 try
 {
@@ -91,6 +92,10 @@ try
       else {
         connection();
       }
+    }
+    //lien de  deconnection//
+    elseif ($_GET['action'] == 'deconnection') {
+      deconnection();
     }
     //page contact//
     elseif ($_GET['action'] == 'contact') {
