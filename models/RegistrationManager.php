@@ -26,9 +26,9 @@ class RegistrationManager extends Manager
 	public function check_email($email)
 	{
 		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT COUNT(email) FROM user WHERE email = ?');
-		$req->execute(array($email));
-		
-		return $req;
+		$req = $db->prepare('SELECT COUNT(email) FROM user WHERE email = :email');
+		$req->bindParam(':email', $email);
+		$req->execute();
+		return $req->fetchColumn();
 	}
 }

@@ -27,12 +27,14 @@
             <nav class="nav justify-content-center">
               <a class="nav-link" href="index.php">Chapitres</a>
               <a class="nav-link" href="index.php?action=contact">Contact</a>
-              <a class="nav-link" href="index.php?action=connexion">Connexion</a>
-              <a class="nav-link" href="index.php?action=registration">Inscription</a>
+              <a class="nav-link" href="index.php?action=deconnexion">Déconnexion</a>
             </nav>
           </div>
           <div class="col-2">
             <a class="btn btn-primary btn-sm" href="index.php?action=addPost" role="button" id="add_post">Ajouter un chapitre</a>
+          </div>
+          <div class="col-12" id="user">
+            <?php if (isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['firstname'] .' '. $_SESSION['name']; } ?>
           </div>
         </div>
 

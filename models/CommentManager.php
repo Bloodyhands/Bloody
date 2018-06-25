@@ -23,4 +23,14 @@ class CommentManager extends Manager
 
 		return $affectedLines;
 	}
+
+	public function signals($comment_id, $user_id)
+	{
+		$db = $this->dbconnect();
+		$req = $db->prepare('INSERT INTO report(comment_id, user_id, report_date) VALUES(?, ?, NOW()');
+		$signals = $req->execute(array($comment_id, $user_id));
+
+		return $signals;
+
+	}
 }

@@ -6,10 +6,10 @@ function registration($pseudo = NULL, $name = NULL, $firstname = NULL, $age = NU
 	$registrationManager = new \projet3\Bloody\models\RegistrationManager();
 
 	if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
-		$count = $registrationManager->check_email($email);
-		$sub = $registrationManager->inscription($pseudo, $name, $firstname, $age, $email, $password);
-		if ($count === TRUE) {
-			throw new Exception('cette adresse email est déjà utilisée');
+		if ($registrationManager->check_email($email) == 0) {
+			$registrationManager->inscription($pseudo, $name, $firstname, $age, $email, $password);
+		} else {
+			throw new Exception('l\'email existe deja');
 		}
 	}
 

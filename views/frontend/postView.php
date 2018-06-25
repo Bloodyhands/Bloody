@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
@@ -6,10 +8,10 @@
 		<div id="chapter_return" class="text-center"><a class="btn btn-secondary btn-sm" href="index.php" role="button">Retour à la liste des chapitres</a></div>
 	</div>
 	<div class="col-4">
-		<div id="chapter_update" class="text-center"><a class="btn btn-primary btn-sm" href="index.php?action=updatePost&id=<?= $post['id']?>" role="button">Modifier le chapitre</a></div>
+		<?php if (isset($_SESSION['pseudo'])) { if ($_SESSION['role'] == 'admin') { ?><div id="chapter_update" class="text-center"><a class="btn btn-primary btn-sm" href="index.php?action=updatePost&id=<?= $post['id']?>" role="button">Modifier le chapitre</a></div><?php }} ?>
 	</div>
 	<div class="col-4">
-		<div id="chapter_delete" class="text-center"><a class="btn btn-danger btn-sm" href="index.php?action=deletePost&id=<?= $post['id']?>" role="button">Supprimer le chapitre</a></div>
+		<?php if (isset($_SESSION['pseudo'])) { if ($_SESSION['role'] == 'admin') { ?><div id="chapter_delete" class="text-center"><a class="btn btn-danger btn-sm" href="index.php?action=deletePost&id=<?= $post['id']?>" role="button">Supprimer le chapitre</a></div><?php }} ?>
 	</div>
 	<div class="col-12 text-justify" id="content_post">
 		<?= html_entity_decode(nl2br(htmlspecialchars($post['content']))) ?>
@@ -19,6 +21,7 @@
 	<div class="col-12">
 		<h5 class="text-center" id="comment_post_title">Commentaires</h5><br>
 	</div>
+	<?php if(isset($_SESSION['pseudo'])) { if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'user') { ?>
 	<div class="col-6">
 		<form action="index.php?action=addComment&id=<?= $post['id'] ?>" method="post">
 			<div class="form-group text-center">
@@ -41,7 +44,7 @@
 				while ($comment = $comments->fetch())
 				{
 				?>
-				<p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> : Ajouté le <?= $comment['comment_date_fr'] ?></p>
+				<p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> : Ajouté le <?= $comment['comment_date_fr'] ?>&nbsp;&nbsp;&nbsp;<a class="btn btn-warning btn-sm" href="#" role="button">Signaler</a></p>
 				<p><?= html_entity_decode(nl2br(htmlspecialchars($comment['comment']))) ?></p>
 				<?php
 				}
@@ -49,7 +52,20 @@
 			</div>
 		</div>
 	</div>
+	<?php }} else {
+			echo 'Pour lire les commentaires et commenter les articles vous pouvez vous &nbsp;<a href="index.php?action=connection">connecter</a>&nbsp; ou vous &nbsp;<a href="index.php?action=registration">inscrire</a>';
+				} ?>
 </div>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('views\frontend\template.php'); ?>
+<?php 
+if (isset($_SESSION['pseudo'])) {
+	if ($_SESSION['role'] == 'user') {
+		include('views\frontend\user\templateUser.php');
+	} elseif ($_SESSION['role'] == 'admin') {
+		include('views\frontend\admin\templateAdmin.php');
+	} 
+} else {
+	include('views\frontend\templatePublic.php');
+}
+?>
