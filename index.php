@@ -36,7 +36,9 @@ try
     }
     //signalement de commentaires//
     elseif ($_GET['action'] == 'report') {
-      
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+        report($_GET['comment_id'], $_GET['post_id']);
+      }
     }
     //formulaire d'ajout de chapitre//
     elseif ($_GET['action'] == 'addPost') {

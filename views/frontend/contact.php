@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php ob_start(); ?>
 <?php $title = 'Contact'; ?>
 
@@ -24,4 +25,14 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('views\frontend\templatePublic.php'); ?>
+<?php 
+if (isset($_SESSION['pseudo'])) {
+  if ($_SESSION['role'] == 'user') {
+    include('views\frontend\user\templateUser.php');
+  } elseif ($_SESSION['role'] == 'admin') {
+    include('views\frontend\admin\templateAdmin.php');
+  } 
+} else {
+  include('views\frontend\templatePublic.php');
+}
+?>
