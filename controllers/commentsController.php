@@ -20,3 +20,11 @@ function report($comment_id)
 
 		header('Location: index.php');
 }
+
+function allComments()
+{
+	$commentManager = new \projet3\Bloody\models\CommentManager();
+	$allComments = $commentManager->getAllComments();
+
+	require('views\backend\dashboardView.php');
+}

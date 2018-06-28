@@ -21,40 +21,42 @@
 	<div class="col-12">
 		<h5 class="text-center" id="comment_post_title">Commentaires</h5><br>
 	</div>
-	<?php if(isset($_SESSION['pseudo'])) { if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'user') { ?>
-	<div class="col-6">
-		<form action="index.php?action=addComment&id=<?= $post['id'] ?>" method="post">
-			<div class="form-group text-center">
-				<label for="pseudo">Pseudo</label>
-				<input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Entrer le pseudo">
+	<?php if(isset($_SESSION['pseudo'])) { 
+		if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'user') { ?>
+			<div class="col-6">
+				<form action="index.php?action=addComment&id=<?= $post['id'] ?>" method="post">
+					<div class="form-group text-center">
+						<label for="staticPseudo" class="col-sm-2 col-form-label">Pseudo</label>
+						<input type="text" readonly class="form-control" id="staticPseudo" value="<?php echo $_SESSION['pseudo'] ?>">
+					</div>
+					<div class="form-group text-center">
+						<label for="comment">Commentaires</label><br>
+						<textarea class="textarea" id="comment" name="comment" rows="4"></textarea>
+					</div>
+					<div id="send" class="text-center">
+						<button type="submit" class="btn btn-primary btn-sm">Envoyer</button>
+					</div>
+				</form>
 			</div>
-			<div class="form-group text-center">
-				<label for="comment">Commentaires</label><br>
-				<textarea class="textarea" id="comment" name="comment" rows="4"></textarea>
+			<div class="col-6">
+				<div class="card">
+					<div class="card-body">
+						<?php
+						while ($comment = $comments->fetch())
+						{
+						?>
+						<p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> : Ajouté le <?= $comment['comment_date_fr'] ?>&nbsp;&nbsp;&nbsp;<a class="fas fa-exclamation-circle" style="color:#f4a341" href="index.php?action=report&id=<?= $comment['id'] ?>" role="button"></a></p>
+						<p><?= html_entity_decode(nl2br(htmlspecialchars($comment['comment']))) ?></p>
+						<?php
+						}
+						?>
+					</div>
+				</div>
 			</div>
-			<div id="send" class="text-center">
-				<button type="submit" class="btn btn-primary btn-sm">Envoyer</button>
-			</div>
-		</form>
-	</div>
-	<div class="col-6">
-		<div class="card">
-			<div class="card-body">
-				<?php
-				while ($comment = $comments->fetch())
-				{
-				?>
-				<p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> : Ajouté le <?= $comment['comment_date_fr'] ?>&nbsp;&nbsp;&nbsp;<a class="fas fa-exclamation-circle" style="color:#f4a341" href="index.php?action=report&id=<?= $comment['id'] ?>" role="button"></a></p>
-				<p><?= html_entity_decode(nl2br(htmlspecialchars($comment['comment']))) ?></p>
-				<?php
-				}
-				?>
-			</div>
-		</div>
-	</div>
-	<?php }} else {
-			echo 'Pour lire les commentaires et commenter les articles vous pouvez vous &nbsp;<a href="index.php?action=connection">connecter</a>&nbsp; ou vous &nbsp;<a href="index.php?action=registration">inscrire</a>';
-				} ?>
+		<?php }
+	} else {
+		echo 'Pour lire les commentaires et commenter les articles vous pouvez vous &nbsp;<a href="index.php?action=connection">connecter</a>&nbsp; ou vous &nbsp;<a href="index.php?action=registration">inscrire</a>';
+	} ?>
 </div>
 <?php $content = ob_get_clean(); ?>
 

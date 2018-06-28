@@ -12,11 +12,12 @@ nav a
 }
 #dashboard
 {
-	margin-top: 38px;
+	margin-top: 42px;
 }
 #user
 {
 	text-align: center;
+	font-size: 1.2em;
 }
 #add_post
 {

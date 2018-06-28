@@ -40,6 +40,10 @@ try
         report($_GET['comment_id'], $_GET['post_id']);
       }
     }
+    //accès au dashboard pour les commentaires//
+    elseif ($_GET['action'] == 'allComments') {
+      allComments();
+    }
     //formulaire d'ajout de chapitre//
     elseif ($_GET['action'] == 'addPost') {
       if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
