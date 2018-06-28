@@ -16,6 +16,7 @@ function post()
 	$commentManager = new \projet3\Bloody\models\CommentManager();
 	$post = $postManager->getPost($_GET['id']);
 	$comments = $commentManager->getComments($_GET['id']);
+	//$signals = $commentManager->getSignals($_GET['comment_id'], $_GET['post_id']);
 
 	require('views\frontend\postView.php');
 }

@@ -44,7 +44,7 @@
 				while ($comment = $comments->fetch())
 				{
 				?>
-				<p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> : Ajouté le <?= $comment['comment_date_fr'] ?>&nbsp;&nbsp;&nbsp;<button class="fas fa-exclamation-circle" style="color:#f4a341" href="#"></button></p>
+				<p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> : Ajouté le <?= $comment['comment_date_fr'] ?>&nbsp;&nbsp;&nbsp;<a class="fas fa-exclamation-circle" style="color:#f4a341" href="index.php?action=report&id=<?= $comment['id'] ?>" role="button"></a></p>
 				<p><?= html_entity_decode(nl2br(htmlspecialchars($comment['comment']))) ?></p>
 				<?php
 				}

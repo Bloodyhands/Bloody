@@ -10,6 +10,10 @@ nav a
 {
 	color: black;
 }
+#dashboard
+{
+	margin-top: 38px;
+}
 #user
 {
 	text-align: center;

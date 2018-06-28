@@ -33,8 +33,11 @@
               <a class="nav-link" href="index.php?action=deconnection">Déconnexion</a>
             </nav>
           </div>
-          <div class="col-2">
+          <div class="col-1">
             <a class="btn btn-primary btn-sm" href="index.php?action=addPost" role="button" id="add_post">Ajouter un chapitre</a>
+          </div>
+          <div class="col-1" id="dashboard">
+            <a class="fas fa-desktop" href="index.php" role="button"></a>
           </div>
           <div class="col-12" id="user">
             <?php if (isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['firstname'] .' '. $_SESSION['name']; } ?>
