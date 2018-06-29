@@ -40,6 +40,7 @@ class CommentManager extends Manager
 
 		return $req->execute();
 	}
+
 	/*public function getSignals($comment_id, $post_id)
 	{
 		$db = $this->dbConnect();
@@ -48,4 +49,12 @@ class CommentManager extends Manager
 
 		return $signals;
 	}*/
+
+	public function clearComment($id)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('DELETE FROM comment WHERE id = :id');
+		$req->bindParam(':id', $id);
+		$req->execute();
+	}
 }

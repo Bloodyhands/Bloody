@@ -44,6 +44,14 @@ try
     elseif ($_GET['action'] == 'allComments') {
       allComments();
     }
+    //suppression des commentaires//
+    elseif ($_GET['action'] == 'deleteComment') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+        deleteComment($_GET['id']);
+      } else {
+        $_SESSION['error'] = 'Le commentaire n\'a pas pu être supprimé';
+      }
+    }
     //formulaire d'ajout de chapitre//
     elseif ($_GET['action'] == 'addPost') {
       if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {

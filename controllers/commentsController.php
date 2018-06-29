@@ -28,3 +28,11 @@ function allComments()
 
 	require('views\backend\dashboardView.php');
 }
+
+function deleteComment($id)
+{
+	$commentManager = new \projet3\Bloody\models\CommentManager();	
+	$commentManager->clearComment($id);
+
+	header('Location: index.php?action=allComments');
+}
