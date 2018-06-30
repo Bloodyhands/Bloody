@@ -33,6 +33,9 @@
               <a class="nav-link" href="index.php?action=deconnection">Déconnexion</a>
             </nav>
           </div>
+           <div class="col-1">
+            <a class="fas fa-desktop" href="index.php?action=allComments" role="button"  id="dashboard"></a>
+          </div>
           <div class="col-12" id="user">
             <em><?php if (isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['firstname'] .' '. $_SESSION['name']; } ?></em>
           </div>
