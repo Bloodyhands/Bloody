@@ -13,7 +13,7 @@ class PostManager extends Manager
 
 		return $req;
 	}
-		
+	
 	public function getPost($post_id)
 	{
 		$db = $this->dbConnect();

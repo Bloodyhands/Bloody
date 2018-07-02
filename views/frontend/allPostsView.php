@@ -6,17 +6,17 @@
 	<?php
 	foreach($posts as $data)
 	{
-	?>
-	<div class="col-5" id="chapters_list">
-		<div class="card border-dark text-center">
-			<div class="card-body">
-				<h5 class="card-title"><?= htmlspecialchars($data['title']) ?></h5>
-				<p class="card-text" id="publication_date"><em>Publié le <?= $data['creation_date_fr'] ?></em></p>
-				<a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="btn btn-secondary btn-sm" id="chapter_button">Lire le chapitre</a>
+		?>
+		<div class="col-5" id="chapters_list">
+			<div class="card border-dark text-center">
+				<div class="card-body">
+					<h5 class="card-title"><?= htmlspecialchars($data['title']) ?></h5>
+					<p class="card-text" id="publication_date"><em>Publié le <?= $data['creation_date_fr'] ?></em></p>
+					<a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="btn btn-secondary btn-sm" id="chapter_button">Lire le chapitre</a>
+				</div>
 			</div>
 		</div>
-	</div>
-	<?php
+		<?php
 	}
 	?>
 	<!--<div class="col-12" id="pagination">

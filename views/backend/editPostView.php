@@ -2,7 +2,7 @@
 <?php $title = 'Edition de chapitre'; ?>
 
 <div class="alert alert-success" role="alert">
-  	<?= $_SESSION['success']; ?>
+	<?= $_SESSION['success']; ?>
 </div>
 
 <form action="index.php?action=updatePost&id=<?=$post['id']?>" method="post">

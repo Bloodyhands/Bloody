@@ -26,7 +26,7 @@ function connection()
 			}
 		}
 
-			header('Location: index.php');
+		header('Location: index.php');
 	}
 
 	require ('views\backend\connectionView.php');

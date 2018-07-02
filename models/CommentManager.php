@@ -10,9 +10,9 @@ class CommentManager extends Manager
 	{
 		$db = $this->dbConnect();
 		$comments = $db->prepare('SELECT id, pseudo, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%i\') AS comment_date_fr FROM comment WHERE post_id = ? ORDER BY comment_date DESC');
-	    $comments->execute(array($post_id));
+		$comments->execute(array($post_id));
 
-	    return $comments;
+		return $comments;
 	}
 
 	public function getAllComments()
@@ -51,8 +51,6 @@ class CommentManager extends Manager
 		$signals = $req->fetchAll();
 
 		return $signals;
-
-
 	}
 
 	public function clearComment($id)

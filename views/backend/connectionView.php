@@ -2,7 +2,7 @@
 <?php $title = 'Connexion'; ?>
 
 <div class="alert alert-success" role="alert">
-  	<?= $_SESSION['success']; ?>
+	<?= $_SESSION['success']; ?>
 </div>
 
 <form action="index.php?action=connection" method="post">
