@@ -16,6 +16,9 @@ function connection()
 				$_SESSION['pseudo'] = $user['pseudo'];
 				$_SESSION['name'] = $user['name'];
 				$_SESSION['firstname'] = $user['firstname'];
+				$_SESSION['email'] = $user['email'];
+				$_SESSION['age'] = $user['age'];
+				$_SESSION['creation_date_fr'] = $user['creation_date_fr'];
 				$_SESSION['role'] = $user['role'];
 			}
 			else {

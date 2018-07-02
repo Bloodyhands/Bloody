@@ -26,15 +26,18 @@
             <h1 class="text-center">Billet simple pour l'Alaska</h1>
             <h3 class="text-center">Par Jean Forteroche</h3>
           </div>
-          <div class="col-4">
+          <div class="col-5">
             <nav class="nav justify-content-center">
               <a class="nav-link" href="index.php">Chapitres</a>
               <a class="nav-link" href="index.php?action=contact">Contact</a>
               <a class="nav-link" href="index.php?action=deconnection">Déconnexion</a>
             </nav>
           </div>
+           <div class="col-1">
+            <a class="fas fa-desktop" href="index.php?action=allComments" role="button"  id="dashboard"></a>
+          </div>
           <div class="col-12" id="user">
-            <?php if (isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['firstname'] .' '. $_SESSION['name']; } ?>
+            <em><?php if (isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['firstname'] .' '. $_SESSION['name']; } ?></em>
           </div>
         </div>
 

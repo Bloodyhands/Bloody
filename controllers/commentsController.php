@@ -20,3 +20,24 @@ function report($comment_id)
 
 		header('Location: index.php');
 }
+
+function allComments()
+{
+	$commentManager = new \projet3\Bloody\models\CommentManager();
+	$allComments = $commentManager->getAllComments();
+	$signals = array();
+	foreach ($allComments as $comment) {
+		if (!empty($commentManager->getSignals((int)$comment['id']))) {
+			$signals[] = $comment['id'];
+		}
+	}
+	require('views\backend\dashboardView.php');
+}
+
+function deleteComment($id)
+{
+	$commentManager = new \projet3\Bloody\models\CommentManager();	
+	$commentManager->clearComment($id);
+
+	header('Location: index.php?action=allComments');
+}

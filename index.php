@@ -37,7 +37,19 @@ try
     //signalement de commentaires//
     elseif ($_GET['action'] == 'report') {
       if (isset($_GET['id']) && $_GET['id'] > 0) {
-        report($_GET['comment_id'], $_GET['post_id']);
+        report($_GET['id']);
+      }
+    }
+    //accès au dashboard pour les commentaires//
+    elseif ($_GET['action'] == 'allComments') {
+      allComments();
+    }
+    //suppression des commentaires//
+    elseif ($_GET['action'] == 'deleteComment') {
+      if (isset($_GET['id']) && $_GET['id'] > 0) {
+        deleteComment($_GET['id']);
+      } else {
+        $_SESSION['error'] = 'Le commentaire n\'a pas pu être supprimé';
       }
     }
     //formulaire d'ajout de chapitre//
