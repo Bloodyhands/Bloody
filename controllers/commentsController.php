@@ -25,7 +25,12 @@ function allComments()
 {
 	$commentManager = new \projet3\Bloody\models\CommentManager();
 	$allComments = $commentManager->getAllComments();
-
+	$signals = array();
+	foreach ($allComments as $comment) {
+		if (!empty($commentManager->getSignals((int)$comment['id']))) {
+			$signals[] = $comment['id'];
+		}
+	}
 	require('views\backend\dashboardView.php');
 }
 

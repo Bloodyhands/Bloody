@@ -27,7 +27,7 @@
 				<form action="index.php?action=addComment&id=<?= $post['id'] ?>" method="post">
 					<div class="form-group text-center">
 						<label for="staticPseudo" class="col-sm-2 col-form-label">Pseudo</label>
-						<input type="text" readonly class="form-control" id="staticPseudo" value="<?php echo $_SESSION['pseudo'] ?>">
+						<input type="text" readonly class="form-control" id="pseudo" name="pseudo" value="<?php echo $_SESSION['pseudo'] ?>">
 					</div>
 					<div class="form-group text-center">
 						<label for="comment">Commentaires</label><br>
