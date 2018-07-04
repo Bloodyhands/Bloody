@@ -29,6 +29,10 @@ function addPost($title = null, $content = null)
 		
 		header('Location: index.php');
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> e9f2397976431e25f0be4fcff553c1b345d8c1f8
 	require ('views\backend\addPostView.php');
 }
 

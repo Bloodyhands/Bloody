@@ -31,7 +31,7 @@ function allComments()
 			$signals[] = $comment['id'];
 		}
 	}
-	require('views\backend\dashboardView.php');
+	require('views\backend\signalsView.php');
 }
 
 function deleteComment($id)

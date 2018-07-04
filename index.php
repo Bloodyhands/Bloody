@@ -6,6 +6,8 @@ require('controllers\contactController.php');
 require('controllers\registrationController.php');
 require('controllers\connectionController.php');
 require('controllers\deconnectionController.php');
+require('controllers\userController.php');
+require('controllers\statisticController.php');
 
 try
 {
@@ -40,9 +42,13 @@ try
         report($_GET['id']);
       }
     }
-    //accès au dashboard pour les commentaires//
+    //accès au tableau de bord pour les commentaires//
     elseif ($_GET['action'] == 'allComments') {
       allComments();
+    }
+    //accès au tableau de bord pour les statistiques//
+    elseif ($_GET['action'] == 'statistics') {
+      statistics();
     }
     //suppression des commentaires//
     elseif ($_GET['action'] == 'deleteComment') {
@@ -111,6 +117,13 @@ try
   elseif ($_GET['action'] == 'deconnection') {
     deconnection();
   }
+<<<<<<< HEAD
+=======
+    //page profil des utilisateurs//
+  elseif ($_GET['action'] == 'showProfil') {
+    showProfil();
+  }
+>>>>>>> e9f2397976431e25f0be4fcff553c1b345d8c1f8
     //page contact//
   elseif ($_GET['action'] == 'contact') {
     contact();
