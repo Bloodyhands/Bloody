@@ -7,6 +7,7 @@ require('controllers\registrationController.php');
 require('controllers\connectionController.php');
 require('controllers\deconnectionController.php');
 require('controllers\userController.php');
+require('controllers\statisticController.php');
 
 try
 {
@@ -41,9 +42,13 @@ try
         report($_GET['id']);
       }
     }
-    //accès au dashboard pour les commentaires//
+    //accès au tableau de bord pour les commentaires//
     elseif ($_GET['action'] == 'allComments') {
       allComments();
+    }
+    //accès au tableau de bord pour les statistiques//
+    elseif ($_GET['action'] == 'statistics') {
+      statistics();
     }
     //suppression des commentaires//
     elseif ($_GET['action'] == 'deleteComment') {
@@ -86,43 +91,43 @@ try
       if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
         if (!empty($_POST['pseudo']) && !empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['age']) && !empty($_POST['email']) && !empty($_POST['password'])) {
           if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['email'])) {
-             registration($_POST['pseudo'], $_POST['name'], $_POST['firstname'], $_POST['age'], $_POST['email'] = htmlspecialchars($_POST['email']), $_POST['password']);
-          } else {
-            throw new Exception('l\'adresse mail n\'est pas valide');
-          }
-        }
-      } else {
-        registration();
-      }
-    }
-    //page connexion//
-    elseif ($_GET['action'] == 'connection') {
-      if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
-        if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
-          connection();
-        } else {
-          throw new Exception('pseudo ou mot de passe manquant');
+           registration($_POST['pseudo'], $_POST['name'], $_POST['firstname'], $_POST['age'], $_POST['email'] = htmlspecialchars($_POST['email']), $_POST['password']);
+         } else {
+          throw new Exception('l\'adresse mail n\'est pas valide');
         }
       }
-      else {
-        connection();
-      }
+    } else {
+      registration();
     }
-    //lien de  deconnection//
-    elseif ($_GET['action'] == 'deconnection') {
-      deconnection();
-    }
-    //page profil des utilisateurs//
-    elseif ($_GET['action'] == 'show_profil') {
-      showProfil();
-    }
-    //page contact//
-    elseif ($_GET['action'] == 'contact') {
-      contact();
-    }
-  } else {
-    allPosts();
   }
+    //page connexion//
+  elseif ($_GET['action'] == 'connection') {
+    if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+      if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
+        connection();
+      } else {
+        throw new Exception('pseudo ou mot de passe manquant');
+      }
+    }
+    else {
+      connection();
+    }
+  }
+    //lien de  deconnection//
+  elseif ($_GET['action'] == 'deconnection') {
+    deconnection();
+  }
+    //page profil des utilisateurs//
+  elseif ($_GET['action'] == 'showProfil') {
+    showProfil();
+  }
+    //page contact//
+  elseif ($_GET['action'] == 'contact') {
+    contact();
+  }
+} else {
+  allPosts();
+}
 }
 catch(Exception $e)
 {

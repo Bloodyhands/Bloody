@@ -12,6 +12,14 @@
 							<label for="email">Email</label>
 							<input type="email" class="form-control" id="email" value="<?php echo $_SESSION['email'] ?>">
 						</div>
+						<div class="form-group col-12">
+							<label for="email">Modifier votre Email</label>
+							<input type="modifyEmail" class="form-control" id="modifyEmail" value="<?php echo $_SESSION['email'] ?>">
+						</div>
+						<div class="form-group col-12">
+							<label for="email">Modifier votre mot de passe</label>
+							<input type="modifyPassword" class="form-control" id="modifyPassword" value="">
+						</div>
 						<div class="form-group col-6">
 							<label for="firstname">Prénom</label>
 							<input type="firstname" class="form-control" id="firstname" value="<?php echo $_SESSION['firstname'] ?>">
@@ -20,11 +28,11 @@
 							<label for="name">Nom</label>
 							<input type="name" class="form-control" id="name" value="<?php echo $_SESSION['name'] ?>">
 						</div>
-						<div class="form-group">
+						<div class="form-group col-6">
 							<label for="age">Age</label>
 							<input type="text" class="form-control" id="age" value="<?php echo $_SESSION['age'] .' '. 'ans' ?>">
 						</div>
-						<div class="form-group">
+						<div class="form-group col-6">
 							<label for="creationDate">Date d'inscription</label>
 							<input type="text" class="form-control" id="creationDate" value="<?php echo $_SESSION['creation_date_fr'] ?>">
 						</div>

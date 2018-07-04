@@ -16,7 +16,6 @@ function post()
 	$commentManager = new \projet3\Bloody\models\CommentManager();
 	$post = $postManager->getPost($_GET['id']);
 	$comments = $commentManager->getComments($_GET['id']);
-	//$signals = $commentManager->getSignals($_GET['comment_id'], $_GET['post_id']);
 
 	require('views\frontend\postView.php');
 }
@@ -30,12 +29,6 @@ function addPost($title = null, $content = null)
 		
 		header('Location: index.php');
 	}
-
-	/*if ($postManager === false) {
-		$_SESSION['error'] = 'Votre chapitre '.$id.' n\'a pas été créé';
-	} else {
-		$_SESSION['success'] = 'Votre chapitre '.$id.' a bien été créé';	
-	}*/
 
 	require ('views\backend\addPostView.php');
 }
