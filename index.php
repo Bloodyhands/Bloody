@@ -6,6 +6,7 @@ require('controllers\contactController.php');
 require('controllers\registrationController.php');
 require('controllers\connectionController.php');
 require('controllers\deconnectionController.php');
+require('controllers\userController.php');
 
 try
 {
@@ -110,6 +111,10 @@ try
     //lien de  deconnection//
     elseif ($_GET['action'] == 'deconnection') {
       deconnection();
+    }
+    //page profil des utilisateurs//
+    elseif ($_GET['action'] == 'show_profil') {
+      showProfil();
     }
     //page contact//
     elseif ($_GET['action'] == 'contact') {

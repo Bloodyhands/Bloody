@@ -1,10 +1,6 @@
 <?php ob_start(); ?>
 <?php $title = 'Ajout de chapitre'; ?>
 
-<!--<div class="alert alert-success" role="alert">
-	<?= $_SESSION['success']?>
-</div>-->
-
 <form action="index.php?action=addPost" method="post">
 	<div class="form-row">
 		<div class="form-group col-12 text-center">
