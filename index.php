@@ -117,13 +117,10 @@ try
   elseif ($_GET['action'] == 'deconnection') {
     deconnection();
   }
-<<<<<<< HEAD
-=======
     //page profil des utilisateurs//
   elseif ($_GET['action'] == 'showProfil') {
     showProfil();
   }
->>>>>>> e9f2397976431e25f0be4fcff553c1b345d8c1f8
     //page contact//
   elseif ($_GET['action'] == 'contact') {
     contact();
