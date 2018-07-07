@@ -34,20 +34,6 @@
           <a class="nav-link" href="index.php">Chapitres</a>
           <a class="nav-link" href="index.php?action=contact">Contact</a>
           <a class="nav-link" href="index.php?action=deconnection">Déconnexion</a>
-        </nav>
-      </div>
-      <div class="col-1">
-        <a class="fas fa-desktop" href="index.php?action=allComments" role="button"  id="dashboard"></a>
-      </div>
-      <div class="col-12" id="user">
-        <em><?php if (isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['firstname'] .' '. $_SESSION['name']; } ?></em>
-      </div>
-      </div>
-      <div class="col-5">
-        <nav class="nav justify-content-center">
-          <a class="nav-link" href="index.php">Chapitres</a>
-          <a class="nav-link" href="index.php?action=contact">Contact</a>
-          <a class="nav-link" href="index.php?action=deconnection">Déconnexion</a>
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tableau de bord</a>
           <div class="dropdown-menu" id="dashboard">
             <a class="dropdown-item" href="index.php?action=showProfil" title="Profil">Profil</a>
