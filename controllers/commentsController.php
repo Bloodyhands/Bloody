@@ -13,12 +13,12 @@ function addComment($post_id, $pseudo, $comment)
 	}
 }
 
-function report($comment_id)
+function report($comment_id, $post_id)
 {
 	$commentManager = new \projet3\Bloody\models\CommentManager();
-	$signal = $commentManager->signal($comment_id);
+	$signal = $commentManager->signal($comment_id, $post_id);
 
-	header('Location: index.php');
+	header('Location: index.php?action=post&id=' . $post_id);
 }
 
 function allComments()

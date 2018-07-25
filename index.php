@@ -39,7 +39,7 @@ try
     //signalement de commentaires//
     elseif ($_GET['action'] == 'report') {
       if (isset($_GET['id']) && $_GET['id'] > 0) {
-        report($_GET['id']);
+        report($_GET['id'], $_GET['post_id']);
       }
     }
     //accès au tableau de bord pour les commentaires//
