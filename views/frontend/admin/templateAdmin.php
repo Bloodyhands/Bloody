@@ -36,7 +36,7 @@
           <a class="nav-link" href="index.php?action=deconnection">Déconnexion</a>
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tableau de bord</a>
           <div class="dropdown-menu" id="dashboard">
-            <a class="dropdown-item" href="index.php?action=allComments" title="Commens_signals">Commentaires et signalements</a>
+            <a class="dropdown-item" href="index.php?action=allComments" title="Comments_signals">Commentaires et signalements</a>
             <a class="dropdown-item" href="index.php?action=statistics" title="Statistiques">Statistiques</a>
           </div>
         </nav>
