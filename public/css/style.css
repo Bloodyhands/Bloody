@@ -6,6 +6,29 @@ header nav
 	font-style: italic;
 	text-transform: uppercase;
 }
+.nav 
+{
+	 display : none;
+}
+.menu-checkbox:checked ~ .nav
+{
+	display: block;
+}
+.menu-checkbox
+{
+	opacity: 0;
+	position : absolute;
+	top: -5000px;
+}
+.menu-checkbox:focus + .menu-toogle
+{
+	outline: #00A1A1 auto 2px;
+}
+.menu-toogle
+{
+	font-size: 1.2em;
+	padding-top: 50px;
+}
 nav a
 {
 	color: black;
@@ -17,7 +40,7 @@ nav a
 }
 #add_post
 {
-	margin-top: 35px;
+	margin-top: 20px;
 }
 #page_title
 {
@@ -71,3 +94,19 @@ footer p
 	margin-top: 5px;
 	padding-top: 20px;
 }
+
+/*------modification si ecran min 60em------*/
+@media screen and (min-width: 60em)
+{
+	.menu-toogle, .menu-checkbox
+	{
+		display: none;
+	}
+	.nav
+	{
+		display: block;
+	}
+	.nav a
+	{
+		display: inline-block;
+	}
