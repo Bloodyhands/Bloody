@@ -37,10 +37,11 @@ nav a
 {
 	text-align: center;
 	font-size: 1.2em;
+	margin-bottom: 10px;
 }
 #add_post
 {
-	margin-top: 20px;
+	margin-bottom: 10px;
 }
 #page_title
 {
@@ -110,3 +111,10 @@ footer p
 	{
 		display: inline-block;
 	}
+}
+
+/*------modification si ecran max 60em------*/
+@media screen and (max-width: 60em)
+{
+
+}
