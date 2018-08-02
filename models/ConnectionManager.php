@@ -6,6 +6,12 @@ require_once('models\Manager.php');
 
 class ConnectionManager extends Manager
 {
+    /**
+     * Retourne un tableau de données de connexion
+     *
+     * @param $pseudo
+     * @return mixed
+     */
 	public function connect ($pseudo)
 	{
 		$db = $this->dbConnect();

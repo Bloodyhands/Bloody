@@ -6,6 +6,11 @@ require_once('models\Manager.php');
 
 class PostManager extends Manager
 {
+    /**
+     * Retourne tous les articles
+     *
+     * @return bool|\PDOStatement
+     */
 	public function getAllPosts()
 	{
 		$db = $this->dbConnect();
@@ -13,7 +18,14 @@ class PostManager extends Manager
 
 		return $req;
 	}
-	
+
+    /**
+     * Retourne un article
+     *
+     * @param $post_id
+     *
+     * @return mixed
+     */
 	public function getPost($post_id)
 	{
 		$db = $this->dbConnect();
@@ -24,6 +36,14 @@ class PostManager extends Manager
 		return $post;
 	}
 
+    /**
+     * Retourne un nouvel article dans la base données
+     *
+     * @param $title
+     * @param $content
+     *
+     * @return bool|\PDOStatement
+     */
 	public function insertPost($title, $content)
 	{
 		$db = $this->dbConnect();
@@ -35,6 +55,15 @@ class PostManager extends Manager
 		return $req;
 	}
 
+    /**
+     * Retourne la modification d'un article
+     *
+     * @param $id
+     * @param $title
+     * @param $content
+     *
+     * @return bool|\PDOStatement
+     */
 	public function editPost($id, $title, $content)
 	{
 		$db = $this->dbConnect();
@@ -47,6 +76,11 @@ class PostManager extends Manager
 		return $req;
 	}
 
+    /**
+     * Suppression d'un article de la base de donnée
+     *
+     * @param $id
+     */
 	public function clearPost($id)
 	{
 		$db = $this->dbConnect();

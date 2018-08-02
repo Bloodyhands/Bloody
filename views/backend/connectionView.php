@@ -1,9 +1,7 @@
 <?php ob_start(); ?>
 <?php $title = 'Connexion'; ?>
 
-<div class="alert alert-success" role="alert">
-	<?= $_SESSION['success']; ?>
-</div>
+<?php $flash->showFlashMessage(); ?>
 
 <form action="index.php?action=connection" method="post">
 	<div class="form-row justify-content-center">

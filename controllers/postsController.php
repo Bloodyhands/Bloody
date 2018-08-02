@@ -1,6 +1,7 @@
 <?php
 
 require_once ('models\PostManager.php');
+require_once ('service\FlashService.php');
 
 function allPosts()
 {

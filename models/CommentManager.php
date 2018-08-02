@@ -6,6 +6,11 @@ require_once('models\Manager.php');
 
 class CommentManager extends Manager
 {
+	/**
+	 * Retourne l'ensemble des commentaires pour un article donné
+	 *
+	 * @return array
+	 */
 	public function getComments($post_id)
 	{
 		$db = $this->dbConnect();
@@ -15,6 +20,11 @@ class CommentManager extends Manager
 		return $comments;
 	}
 
+    /**
+     * Retourne tous les commentaires de tous les articles
+     *
+     * @return array
+     */
 	public function getAllComments()
 	{
 		$db = $this->dbconnect();
@@ -24,6 +34,15 @@ class CommentManager extends Manager
 		return $req->fetchAll();
 	}
 
+    /**
+     * Ajout d'un commentaire sur un article
+     *
+     * @param $post_id
+     * @param $pseudo
+     * @param $comment
+     *
+     * @return bool
+     */
 	public function postComment($post_id, $pseudo, $comment)
 	{
 		$db = $this->dbconnect();
@@ -33,6 +52,13 @@ class CommentManager extends Manager
 		return $affectedLines;
 	}
 
+    /**
+     * Signalement d'un commentaire
+     *
+     * @param $comment_id
+     *
+     * @return bool
+     */
 	public function signal($comment_id)
 	{
 		$db = $this->dbconnect();
@@ -42,6 +68,13 @@ class CommentManager extends Manager
 		return $req->execute();
 	}
 
+    /**
+     * Retourne l'ensemble des signalements pour un commentaire donné
+     *
+     * @param $comment_id
+     *
+     * @return array
+     */
 	public function getSignals($comment_id)
 	{
 		$db = $this->dbConnect();
@@ -53,6 +86,11 @@ class CommentManager extends Manager
 		return $signals;
 	}
 
+    /**
+     * Suppression d'un commentaire
+     *
+     * @param $id
+     */
 	public function clearComment($id)
 	{
 		$db = $this->dbConnect();
