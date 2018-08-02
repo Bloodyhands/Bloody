@@ -8,7 +8,6 @@ require('controllers\connectionController.php');
 require('controllers\deconnectionController.php');
 require('controllers\userController.php');
 require('controllers\statisticController.php');
-require('service\FlashService.php');
 
 try
 {
