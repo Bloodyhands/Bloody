@@ -24,7 +24,7 @@
 <body>
   <!----------------HEADER---------------->
   <header class="container-fluid">
-    <div class="row justify-content-between" id="header">
+    <div class="row justify-content-between">
       <div class="col-6">
         <h1 class="text-center">Billet simple pour l'Alaska</h1>
         <h3 class="text-center">Par Jean Forteroche</h3>

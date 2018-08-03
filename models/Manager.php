@@ -9,9 +9,9 @@ class Manager
      *
      * @return \PDO
      */
-	protected function dbConnect()
-	{
-		$db = new \PDO('mysql:host=localhost;dbname=projet3;charset=utf8', 'root', '');
-		return $db;
-	}
+    protected function dbConnect()
+    {
+    	$db = new \PDO('mysql:host=localhost;dbname=projet3;charset=utf8', 'root', '');
+    	return $db;
+    }
 }

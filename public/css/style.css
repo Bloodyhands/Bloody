@@ -8,7 +8,7 @@ header nav
 }
 .nav 
 {
-	 display : none;
+	display : none;
 }
 .menu-checkbox:checked ~ .nav
 {

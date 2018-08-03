@@ -11,26 +11,26 @@ class StatisticManager extends Manager
      *
      * @return bool|\PDOStatement
      */
-	public function countUsers()
-	{
-		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT COUNT(*) AS nb FROM user');
-		$req->execute();
+    public function countUsers()
+    {
+    	$db = $this->dbConnect();
+    	$req = $db->prepare('SELECT COUNT(*) AS nb FROM user');
+    	$req->execute();
 
-		return $req;
-	}
+    	return $req;
+    }
 
     /**
      * Retourne le nombre d'article créé sur le site
      *
      * @return bool|\PDOStatement
      */
-	public function countPosts()
-	{
-		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT COUNT(*) AS nb FROM post');
-		$req->execute();
+    public function countPosts()
+    {
+    	$db = $this->dbConnect();
+    	$req = $db->prepare('SELECT COUNT(*) AS nb FROM post');
+    	$req->execute();
 
-		return $req;
-	}
+    	return $req;
+    }
 }

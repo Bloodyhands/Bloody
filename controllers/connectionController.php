@@ -27,10 +27,10 @@ function connection()
 				$_SESSION['role'] = $user['role'];
 			}
 			else {
-                $flash->setFlash('Mauvais mot de passe');
+				$flash->setFlash('Mauvais mot de passe');
 
-                header('Location: index.php?action=connection');
-                exit;
+				header('Location: index.php?action=connection');
+				exit;
 			}
 		}
 
