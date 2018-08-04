@@ -33,7 +33,6 @@ function connection()
 				exit;
 			}
 		}
-
 		$flash->setFlash('Connexion ok');
 
 		header('Location: index.php');

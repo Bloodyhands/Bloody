@@ -6,11 +6,15 @@ function addComment($post_id, $pseudo, $comment)
 {
 	$commentManager = new \projet3\Bloody\models\CommentManager();
 	$flash = new \projet3\Bloody\service\FlashService();
-	$affectedLines = $commentManager->postComment($post_id, $pseudo, $comment);
 
-	if ($affectedLines === false) {
-		$flash->setFlash('Impossible d\'ajouter le commentaire');
+	if (empty($_POST['comment'])) {
+		$flash->setFlash('Tous les champs ne sont pas remplis');
+		
+		header ('Location: index.php?action=post&id=' . $post_id);
+		exit;
 	} else {
+		$commentManager->postComment($post_id, $pseudo, $comment);
+
 		header('Location: index.php?action=post&id=' . $post_id);
 	}
 }

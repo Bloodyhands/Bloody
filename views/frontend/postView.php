@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
@@ -53,6 +51,7 @@
 					</div>
 				</div>
 			</div>
+			<?php $flash->showFlashMessage(); ?>
 		<?php }
 	} else {
 		echo 'Pour lire les commentaires et commenter les articles vous pouvez vous &nbsp;<a href="index.php?action=connection">connecter</a>&nbsp; ou vous &nbsp;<a href="index.php?action=registration">inscrire</a>';

@@ -43,12 +43,14 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-10" id="user">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-8" id="user">
                 <em><?php if (isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['firstname'] .' '. $_SESSION['name']; } ?></em>
             </div>
-            <div class="col-2 id="add_post">
+            <div class="col-sm-4" id="add_post">
             <a class="btn btn-primary btn-sm" href="index.php?action=addPost" role="button" id="add_post">Ajouter un chapitre</a>
-        </div>
+            </div>
         </div>
 
         <div class="row justify-content-center">

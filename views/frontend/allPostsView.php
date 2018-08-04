@@ -7,7 +7,7 @@
 	foreach($posts as $data)
 	{
 		?>
-		<div class="col-5" id="chapters_list">
+		<div class="col-sm-6" id="chapters_list">
 			<div class="card border-dark text-center">
 				<div class="card-body">
 					<h5 class="card-title"><?= htmlspecialchars($data['title']) ?></h5>
