@@ -78,7 +78,7 @@ try
         elseif ($_GET['action'] == 'registration') {
             if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
                 if (!empty($_POST['pseudo']) && !empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['age']) && !empty($_POST['email']) && !empty($_POST['password'])) {
-                        registration($_POST['pseudo'], $_POST['name'], $_POST['firstname'], $_POST['age'], $_POST['email'] = htmlspecialchars($_POST['email']), $_POST['password']);
+                    registration($_POST['pseudo'], $_POST['name'], $_POST['firstname'], $_POST['age'], $_POST['email'] = htmlspecialchars($_POST['email']), $_POST['password']);
                 }
             } else {
                 registration();

@@ -24,12 +24,14 @@
 <body>
     <!----------------HEADER---------------->
     <header class="container-fluid">
-        <div class="row justify-content-between ">
-            <div class="col-6">
+        <div class="row">
+            <div class="col-sm-12">
                 <h1 class="text-center">Billet simple pour l'Alaska</h1>
                 <h3 class="text-center">Par Jean Forteroche</h3>
             </div>
-            <div class="col-4">
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-sm-5 text-center">
                 <input id="menu-checkbox" type="checkbox" class="menu-checkbox"/>
                 <label for="menu-checkbox" class="menu-toogle"><i class="fas fa-bars"></i>&nbsp;Menu</label>
                 <nav class="nav justify-content-center">
@@ -43,12 +45,10 @@
                     </div>
                 </nav>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-sm-8" id="user">
+            <div class="col-sm-5 text-center" id="user">
                 <em><?php if (isset($_SESSION['pseudo'])) { echo 'Bonjour ' . $_SESSION['firstname'] .' '. $_SESSION['name']; } ?></em>
             </div>
-            <div class="col-sm-4" id="add_post">
+            <div class="col-sm-2 text-center" id="add_post">
             <a class="btn btn-primary btn-sm" href="index.php?action=addPost" role="button" id="add_post">Ajouter un chapitre</a>
             </div>
         </div>

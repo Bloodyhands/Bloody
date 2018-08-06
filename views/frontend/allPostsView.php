@@ -1,5 +1,5 @@
-<?php session_start(); ?>
 <?php ob_start(); ?>
+<?php $flash->showFlashMessage(); ?>
 <?php $title = 'Liste des chapitres'; ?>
 
 <div class="row justify-content-center">

@@ -1,8 +1,7 @@
 /*------CSS header------*/
 header nav
 {
-	margin-top: 30px;
-	font-size: 1em;
+	font-size: 1.1em;
 	font-style: italic;
 	text-transform: uppercase;
 }
@@ -27,7 +26,6 @@ header nav
 .menu-toogle
 {
 	font-size: 1.2em;
-	padding-top: 50px;
 }
 nav a
 {
@@ -36,8 +34,7 @@ nav a
 #user
 {
 	text-align: center;
-	font-size: 1.2em;
-	margin-bottom: 10px;
+	font-size: 1.1em;
 }
 #add_post
 {
@@ -116,5 +113,21 @@ footer p
 /*------modification si ecran max 60em------*/
 @media screen and (max-width: 60em)
 {
-
+	header nav
+	{
+		font-size: 0.9em;
+	}
+	#chapter_return, #chapter_update, #chapter_delete
+	{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	#send
+	{
+		margin-bottom: 15px;
+	}
+	#user
+	{
+		margin-bottom: 10px;
+	}
 }

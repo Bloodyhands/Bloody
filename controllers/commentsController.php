@@ -1,6 +1,7 @@
 <?php
 require_once ('models\CommentManager.php');
 require_once ('service\FlashService.php');
+require_once ('service\Authorization.php');
 
 function addComment($post_id, $pseudo, $comment)
 {
@@ -31,12 +32,22 @@ function allComments()
 {
 	$commentManager = new \projet3\Bloody\models\CommentManager();
 	$allComments = $commentManager->getAllComments();
-	$signals = array();
-	foreach ($allComments as $comment) {
-		if (!empty($commentManager->getSignals((int)$comment['id']))) {
-			$signals[] = $comment['id'];
+	$flash = new \projet3\Bloody\service\FlashService();
+	$authorization = new \projet3\Bloody\service\Authorization();
+
+	if (($authorization->adminIsAuthorized()) == TRUE ) {
+		$signals = array();
+		foreach ($allComments as $comment) {
+			if (!empty($commentManager->getSignals((int)$comment['id']))) {
+				$signals[] = $comment['id'];
+			}
 		}
-	}
+	} else {
+		$flash->setFlash('Vous n\'avez pas accès à cette page');
+		
+		header ('Location: index.php');
+		exit;
+	} 
 	require('views\backend\signalsView.php');
 }
 
@@ -44,6 +55,6 @@ function deleteComment($id)
 {
 	$commentManager = new \projet3\Bloody\models\CommentManager();	
 	$commentManager->clearComment($id);
-
+	
 	header('Location: index.php?action=allComments');
 }

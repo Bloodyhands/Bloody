@@ -24,12 +24,14 @@
 <body>
   <!----------------HEADER---------------->
   <header class="container-fluid">
-    <div class="row justify-content-between">
-      <div class="col-6">
+    <div class="row">
+      <div class="col-sm-12">
         <h1 class="text-center">Billet simple pour l'Alaska</h1>
         <h3 class="text-center">Par Jean Forteroche</h3>
       </div>
-      <div class="col-4">
+    </div>
+    <div class="row justify-content-between">
+      <div class="col-sm-5 text-center">
         <input id="menu-checkbox" type="checkbox" class="menu-checkbox"/>
         <label for="menu-checkbox" class="menu-toogle"><i class="fas fa-bars"></i>&nbsp;Menu</label>
         <nav class="nav justify-content-center">

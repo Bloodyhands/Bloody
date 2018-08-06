@@ -23,6 +23,5 @@ function registration($pseudo = NULL, $name = NULL, $firstname = NULL, $age = NU
 			exit;
 		}
 	}
-
 	require ('views\backend\registrationView.php');
 }

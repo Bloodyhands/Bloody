@@ -1,10 +1,12 @@
 <?php
 require_once ('models\PostManager.php');
 require_once ('service\FlashService.php');
+require_once ('service\Authorization.php');
 
 function allPosts()
 {
 	$postManager = new \projet3\Bloody\models\PostManager();
+	$flash = new \projet3\Bloody\service\FlashService();
 	$posts = $postManager->getAllPosts();
 
 	require('views\frontend\allPostsView.php');
@@ -31,11 +33,20 @@ function post()
 function addPost($title = null, $content = null)
 {
 	$postManager = new \projet3\Bloody\models\PostManager();
+	$flash = new \projet3\Bloody\service\FlashService();
+	$authorization = new \projet3\Bloody\service\Authorization();
 
-	if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
-		$postManager->insertPost($title, $content);
+	if (($authorization->adminIsAuthorized()) == TRUE ) {
+		if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+			$postManager->insertPost($title, $content);
+			
+			header('Location: index.php');
+		}
+	} else {
+		$flash->setFlash('Vous n\'avez pas accès à cette page');
 		
-		header('Location: index.php');
+		header ('Location: index.php');
+		exit;
 	}
 	require ('views\backend\addPostView.php');
 }
@@ -43,21 +54,38 @@ function addPost($title = null, $content = null)
 function updatePost($id, $title = null, $content = null)
 {
 	$postManager = new \projet3\Bloody\models\PostManager();
+	$flash = new \projet3\Bloody\service\FlashService();
+	$authorization = new \projet3\Bloody\service\Authorization();
 
-	if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
-		$postManager->editPost($id, $title, $content);
+	if (($authorization->adminIsAuthorized()) == TRUE ) {
+		if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+			$postManager->editPost($id, $title, $content);
 
-		header('Location: index.php');
+			header('Location: index.php');
+		}
+	} else {
+		$flash->setFlash('Vous n\'avez pas accès à cette page');
+		
+		header ('Location: index.php');
+		exit;
 	}
-
 	$post = $postManager->getPost($id);
 	require ('views\backend\editPostView.php');
 }
 
 function deletePost($id)
 {
-	$postManager = new \projet3\Bloody\models\PostManager();	
-	$postManager->clearPost($id);
+	$postManager = new \projet3\Bloody\models\PostManager();
+	$flash = new \projet3\Bloody\service\FlashService();
+	$authorization = new \projet3\Bloody\service\Authorization();
 
+	if (($authorization->adminIsAuthorized()) == TRUE ) {	
+		$postManager->clearPost($id);
+	} else {
+		$flash->setFlash('Vous n\'avez pas accès à cette page');
+		
+		header ('Location: index.php');
+		exit;
+	}
 	header('Location: index.php');
 }
