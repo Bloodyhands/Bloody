@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <?php ob_start(); ?>
 <?php $title = 'Profil'; ?>
 <div class="row">
@@ -11,14 +10,6 @@
 						<div class="form-group col-12">
 							<label for="email">Email</label>
 							<input type="email" class="form-control" id="email" value="<?php echo $_SESSION['email'] ?>">
-						</div>
-						<div class="form-group col-12">
-							<label for="email">Modifier votre Email</label>
-							<input type="modifyEmail" class="form-control" id="modifyEmail" value="<?php echo $_SESSION['email'] ?>">
-						</div>
-						<div class="form-group col-12">
-							<label for="email">Modifier votre mot de passe</label>
-							<input type="modifyPassword" class="form-control" id="modifyPassword" value="">
 						</div>
 						<div class="form-group col-6">
 							<label for="firstname">Prénom</label>

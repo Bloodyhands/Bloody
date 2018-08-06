@@ -1,15 +1,20 @@
 <?php
 require_once ('models\ConnectionManager.php');
+require_once ('service\FlashService.php');
 
 function connection()
 {
 	$connectionManager = new \projet3\Bloody\models\ConnectionManager();
+	$flash = new \projet3\Bloody\service\FlashService();
 
 	if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === "POST") {
 		$user = $connectionManager->connect($_POST['pseudo']);
 		
 		if (!$user) {
-			throw new Exception('utilisateur inconnu');
+			$flash->setFlash('Utilisateur inconnu');
+
+			header('Location: index.php?action=connection');
+			exit;
 		} else {
 			if (password_verify($_POST['password'], $user['password'])) {
 				session_start();
@@ -22,10 +27,12 @@ function connection()
 				$_SESSION['role'] = $user['role'];
 			}
 			else {
-				throw new Exception('mauvais mot de passe');
+				$flash->setFlash('Mauvais mot de passe');
+
+				header('Location: index.php?action=connection');
+				exit;
 			}
 		}
-
 		header('Location: index.php');
 	}
 
