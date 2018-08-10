@@ -15,10 +15,6 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
-  <!-- TinyMCE -->
-  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-  <script>tinymce.init({ selector:'textarea' });</script>
-
   <title>Billet simple pour l'Alaska</title>
 </head>
 <body>
