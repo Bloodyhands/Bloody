@@ -1,6 +1,6 @@
 <?php
 
-namespace projet3\Bloody\service;
+namespace Blog\Service;
 
 class Authorization
 {

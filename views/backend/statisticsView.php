@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <?php ob_start(); ?>
 <?php $title = 'Statistiques'; ?>
 
@@ -28,4 +27,4 @@
 
 	<?php $content = ob_get_clean(); ?>
 
-	<?php require('views\frontend\admin\templateAdmin.php'); ?>
+	<?php require('views/frontend/admin/templateAdmin.php'); ?>

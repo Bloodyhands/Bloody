@@ -1,5 +1,5 @@
 <?php
 function contact()
 {
-	require('views\frontend\contact.php');
+	require('views/frontend/contact.php');
 }

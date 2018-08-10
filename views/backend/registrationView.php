@@ -1,9 +1,7 @@
 <?php ob_start(); ?>
 <?php $title = 'Inscription'; ?>
 
-<div class="alert alert-success" role="alert">
-	<?= $_SESSION['success']; ?>
-</div>
+<?php $flash->showFlashMessage(); ?>
 
 <form action="index.php?action=registration" method="post">
 	<div class="form-row justify-content-center">
@@ -39,4 +37,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('views\frontend\templatePublic.php'); ?>
+<?php require('views/frontend/templatePublic.php'); ?>

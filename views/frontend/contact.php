@@ -28,11 +28,11 @@
 <?php 
 if (isset($_SESSION['pseudo'])) {
   if ($_SESSION['role'] == 'user') {
-    include('views\frontend\user\templateUser.php');
+    include('views/frontend/user/templateUser.php');
   } elseif ($_SESSION['role'] == 'admin') {
-    include('views\frontend\admin\templateAdmin.php');
+    include('views/frontend/admin/templateAdmin.php');
   } 
 } else {
-  include('views\frontend\templatePublic.php');
+  include('views/frontend/templatePublic.php');
 }
 ?>
